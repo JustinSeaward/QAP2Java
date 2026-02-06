@@ -43,4 +43,8 @@ public class Money {
 
         return totalCents == otherTotalCents;
     }
+
+    public String toString(){
+        return String.format("$" + "%d" + "." + "%02d",dollars, cents);
+    }
 }
