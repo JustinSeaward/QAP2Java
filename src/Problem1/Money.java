@@ -14,5 +14,11 @@ public class Money {
         this.cents = otherObject.cents;
     }
 
+    public Money add(Money otherAmount){
+        long totalCents = (dollars * 100) + cents;
+        long otherTotalAmount = (otherAmount.dollars * 100) + otherAmount.cents;
+        long totalMoney = totalCents + otherTotalAmount;
 
+        return new Money(totalMoney / 100.0);
+    }
 }
