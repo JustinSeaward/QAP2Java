@@ -28,10 +28,17 @@ public class CreditCard {
         int result = tempBalance.compareTo(creditLimit);
 
         if(result == 1){
-            System.out.println("Charge declined");
+            System.out.println("Exceeds credit limit");
         } else if (result == -1 || result == 0) {
-            System.out.println("Charge successful");
             balance = balance.add(amount);
+            System.out.println("Charge: " + amount);
+            System.out.println("Balance: " + balance);
         }
+    }
+
+    public void payment(Money amount){
+        balance = balance.subtract(amount);
+        System.out.println("Payment: " + amount);
+        System.out.println("Balance: " + balance);
     }
 }
