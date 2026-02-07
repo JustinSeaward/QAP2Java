@@ -12,13 +12,11 @@ public class CreditCard {
     }
 
     public Money getBalance(){
-        this.balance = new Money(balance);
-        return this.balance;
+        return new Money(balance);
     }
 
     public Money getCreditLimit(){
-        this.creditLimit = new Money(creditLimit);
-        return this.creditLimit;
+        return new Money(creditLimit);
     }
 
     public String getPersonals(){
