@@ -8,7 +8,7 @@ public class MyCircle {
 
     public MyCircle(){
         this.radius = radius;
-        this.center = new MyPoint();
+        this.center = new MyPoint(0,0);
     }
     public MyCircle(int x, int y, int radius){
         this.radius = radius;
