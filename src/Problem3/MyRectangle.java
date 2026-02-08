@@ -15,4 +15,38 @@ public class MyRectangle {
         this.topLeft = new MyPoint(topLeft);
         this.bottomRight = new MyPoint(bottomRight);
     }
+
+    public int getWidth(){
+        return Math.abs(bottomRight.getX() - topLeft.getX());
+    }
+
+    public void setWidth(int width){
+        int newBottomRightX = topLeft.getX() + width;
+        this.bottomRight.setX(newBottomRightX);
+    }
+
+    public int getLength(){
+        return Math.abs(bottomRight.getY() - topLeft.getY());
+    }
+
+    public void setLength(int length){
+        int newBottomRightY = topLeft.getY() + length;
+        this.bottomRight.setY(newBottomRightY);
+    }
+
+    public double getArea(){
+        double width = getWidth();
+        double length = getLength();
+        return width * length;
+    }
+
+    public double getPerimeter(){
+        double width = getWidth();
+        double length = getLength();
+        return 2 * (width+length);
+    }
+
+    public String toString(){
+        return("MyRectangle[Width = " + this.getWidth() + " , Length = " + this.getLength() + "]");
+    }
 }
