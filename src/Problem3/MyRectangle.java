@@ -34,6 +34,24 @@ public class MyRectangle {
         this.bottomRight.setY(newBottomRightY);
     }
 
+    // Added to use in the CampusMap to find the center of the buildings(rectangles).
+    public int getTopLeftX(){
+        return this.topLeft.getX();
+    }
+
+    public int getTopLeftY(){
+        return this.topLeft.getY();
+    }
+
+    public int getBottomRightX(){
+        return this.bottomRight.getX();
+    }
+
+    public int getBottomRightY(){
+        return this.bottomRight.getY();
+    }
+    //
+
     public double getArea(){
         double width = getWidth();
         double length = getLength();
