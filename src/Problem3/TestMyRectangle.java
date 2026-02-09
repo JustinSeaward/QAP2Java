@@ -25,5 +25,7 @@ public class TestMyRectangle {
         // Area and perimeter of Rectangle2
         System.out.println("Rectangle 2 Area: " + rec2.getArea());
         System.out.println("Rectangle 2 Perimeter: " + rec2.getPerimeter());
+        System.out.println("Center width of rectangle 1: " + (rec1.getTopLeftX() + rec1.getBottomRightX()) / 2);
+        System.out.println("Center length of rectangle 1: " + (rec1.getTopLeftY() + rec1.getBottomRightY()) / 2);
     }
 }
