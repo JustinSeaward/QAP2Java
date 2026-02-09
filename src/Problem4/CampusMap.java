@@ -1,6 +1,7 @@
 package Problem4;
 
 // Imported classes
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import Problem3.MyRectangle;
 import Problem2.MyLine;
@@ -46,4 +47,24 @@ public class CampusMap {
     public void addFountain(MyCircle newFountain){
         fountains.add(newFountain);
     }
+
+    public double calculateTotalWalkwayLength(){
+        double totalLength = 0.0;
+
+        for(int i = 0; i < walkways.size();i++){
+            totalLength = walkways.get(i).getLength() + totalLength;
+        }
+        return totalLength;
+    }
+
+    public double calculateTotalFountainArea(){
+        double totalArea = 0.0;
+
+        for(int i = 0; i < fountains.size();i++){
+            totalArea = fountains.get(i).getArea() + totalArea;
+        }
+        return totalArea;
+    }
+
+
 }
