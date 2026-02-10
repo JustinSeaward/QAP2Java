@@ -8,12 +8,12 @@ import Problem2.MyPoint;
 
 public class CampusMap {
 
-    // Instance variable
+    // Instance variables
     private ArrayList<MyRectangle> buildings;
     private ArrayList<MyLine> walkways;
     private ArrayList<MyCircle> fountains;
 
-    // Non parameterized Constructor
+    // Non  parameterized Constructor
     public CampusMap(){
         buildings = new ArrayList<>();
         walkways = new ArrayList<>();
@@ -25,7 +25,7 @@ public class CampusMap {
        buildings.add(newBuilding);
     }
 
-    // Method to add walkway between buildings fif they are in the buildings array
+    // Method to add walkway between buildings if they are in the buildings array
     public void addWalkWay(MyRectangle from, MyRectangle to){
         // if statement to determine if the buildings are in the array with an add walkway
         if(buildings.contains(from) && buildings.contains(to)){
@@ -79,11 +79,19 @@ public class CampusMap {
             MyPoint toPoint = new MyPoint(toRectangleCenterX,toRectangleCenterY);
 
             for(int i = 0; i < walkways.size(); i++){
-                if(walkways.get(i).getBegin().equals(fromPoint) && walkways.get(i).getEnd().equals(toPoint)
-                        || walkways.get(i).getBegin().equals(toPoint) && walkways.get(i).getEnd().equals(fromPoint))
-                        {
-                            return true;
-                        }
+                MyPoint pointA = walkways.get(i).getBegin();
+                MyPoint pointB = walkways.get(i).getEnd();
+                if(pointA.getX() == fromPoint.getX() &&
+                        pointA.getY() == fromPoint.getY() &&
+                        pointB.getX() == toPoint.getX() &&
+                        pointB.getY() == toPoint.getY()
+                || pointA.getX() == toPoint.getX() &&
+                        pointA.getY() == toPoint.getY() &&
+                        pointB.getX() == fromPoint.getX() &&
+                        pointB.getY() == fromPoint.getY())
+                {
+                 return true;
+                }
             }
         }
         return false;
